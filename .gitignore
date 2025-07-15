@@ -1,8 +1,0 @@
-﻿################################################################################
-# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
-################################################################################
-
-/.vs
-/Filmovi/.vs
-/Filmovi/Filmovi/obj
-/Filmovi/Filmovi/bin/Debug/net8.0-windows
