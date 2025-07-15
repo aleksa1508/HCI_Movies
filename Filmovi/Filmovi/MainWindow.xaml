@@ -1,0 +1,73 @@
+﻿<Window x:Class="Filmovi.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:notifications="clr-namespace:Notification.Wpf.Controls;assembly=Notification.Wpf"
+        xmlns:local="clr-namespace:Filmovi"
+        mc:Ignorable="d"
+        Title="MainWindow"
+        AllowsTransparency="True"
+        Background="Transparent"
+        SizeToContent="WidthAndHeight"
+        WindowStartupLocation="CenterScreen"
+        MouseLeftButtonDown="Window_MouseLeftButtonDown"
+        WindowStyle="None">
+
+    <Canvas Width="400" Height="400">
+        <notifications:NotificationArea
+    x:Name="WindowNotificationArea"
+            Width="400"
+    Panel.ZIndex="800"
+    MaxItems="3"
+    Position="TopCenter"/>
+        <Rectangle
+        Width="400"
+        Height="390"
+        Fill="#FF34408F"
+        Stroke="DarkGray"
+        StrokeThickness="2"
+        RadiusX="70"
+        RadiusY="70"/>
+        <StackPanel 
+            Name="MainStackPanel"
+            Canvas.Left="10"
+            Canvas.Top="10">
+            <Grid Margin="290 10 0 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Button Name="ButtonMinimize" Grid.Column="0" Margin="0 0 10 0" Style="{StaticResource button_minimize}" Click="ButtonMinimize_Click"></Button>
+                    <Button Name="ButtonClose" Grid.Column="1" Margin="0 0 10 0" Style="{StaticResource button_close}" Click="ButtonClose_Click"/>
+                </Grid>
+            </Grid>
+            <Label Name="LabelTitle" Grid.Column="1" Content="PRIJAVA" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Margin="0 10 0 0" Foreground="White"></Label>
+
+            <Label Name="LabelUserName" Content="Username" FontWeight="Bold" FontSize="15" Margin="70 20 80 0" Foreground="White"></Label>
+            <TextBox Name="TextBoxUsername" Style="{StaticResource txtBox}" HorizontalAlignment="Center" GotFocus="TextBoxUsername_GotFocus" LostFocus="TextBoxUsername_LostFocus"/>
+            <Label Name="ErrorUsernameLabel" Content="" FontWeight="Bold" FontSize="10" Margin="70 5 80 0" Foreground="#FFEBD337"/>
+            <Label Name="LabelPassword" Content="Password" FontWeight="Bold" FontSize="15" Margin="70 0 80 0" Foreground="White"></Label>
+            <PasswordBox Name="PasswordBox" Width="240" Height="30" HorizontalAlignment="Center">
+                <PasswordBox.Template>
+                    <ControlTemplate>
+                        <Border CornerRadius="20" Background="#FFDDDDDD" BorderThickness="2" BorderBrush="{TemplateBinding BorderBrush}" >
+                            <ScrollViewer Name="PART_ContentHost" VerticalAlignment="Center" Margin="15 0 0 0 "></ScrollViewer>
+                        </Border>
+                    </ControlTemplate>
+                </PasswordBox.Template>
+            </PasswordBox>
+            <Label Name="ErrorPasswordLabel" Content="" FontWeight="Bold" FontSize="10" Margin="70 5 80 0" Foreground="#FFEBD337"/>
+
+            <Button Name="ButtonLogIn" Style="{StaticResource button_log_in}" Margin="0 15 0 0" Content="LOG IN" Click="ButtonLogIn_Click" ToolTip="LOG IN"/>
+
+        </StackPanel>
+    </Canvas>
+</Window>
