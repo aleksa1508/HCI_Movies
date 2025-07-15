@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Slike\most.jpg" />
+    <None Remove="Slike\orlovi.jpg" />
+    <None Remove="Slike\profile.png" />
+    <None Remove="Slike\valter.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FontAwesome5" Version="2.1.11" />
+    <PackageReference Include="Notification.Wpf" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Slike\most.jpg" />
+    <Resource Include="Slike\orlovi.jpg" />
+    <Resource Include="Slike\profile.png" />
+    <Resource Include="Slike\valter.jpg" />
+  </ItemGroup>
+
+</Project>
